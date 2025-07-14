@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla - Ciencias de la Educación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff; /* celeste muy suave */
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #4682b4; /* celeste pastel más oscuro */
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .materia {
+      background-color: #b3e5fc; /* celeste pastel */
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      transition: background 0.3s, text-decoration 0.3s;
+    }
+    .materia.aprobada {
+      background-color: #c8e6c9; /* verde pastel */
+      text-decoration: line-through;
+      color: #555;
+    }
+    .materia:hover {
+      background-color: #81d4fa; /* un celeste un poco más fuerte */
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla - Lic. en Ciencias de la Educación</h1>
+  <p>Haz clic en una materia para marcarla como aprobada ✅</p>
+
+  <div class="grid">
+    <div class="materia">Filosofía de la educación</div>
+    <div class="materia">Psicología de la educación</div>
+    <div class="materia">Historia de la educación</div>
+    <div class="materia">Sociología de la educación</div>
+    <div class="materia">Tecnología Educativa</div>
+  </div>
+
+  <script>
+    // Permite marcar materias como aprobadas al hacer clic
+    document.querySelectorAll('.materia').forEach(materia => {
+      materia.addEventListener('click', () => {
+        materia.classList.toggle('aprobada');
+      });
+    });
+  </script>
+</body>
+</html>
